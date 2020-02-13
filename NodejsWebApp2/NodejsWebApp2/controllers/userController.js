@@ -119,7 +119,7 @@ exports.getPageText = function (request, response) {
  * Получение объекта статус_код : сообщение.
  */
 function getPageText() {
-    var ans = {};
+    let ans = {};
     for (var i = 1; i < 10; i++)
         ans["m02" + i] = statusCodes.getMessageStringByCode("m02" + i);
 
