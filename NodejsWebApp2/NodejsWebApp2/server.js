@@ -3,15 +3,10 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-const bodyParser = require("body-parser");
-
 const userRouter = require("./routes/userRouter.js");
 const homeRouter = require("./routes/homeRouter.js");
 
 app.use(express.static("public"));
-
-app.set("view engine", "hbs");
-app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/users", userRouter);
 app.use("/", homeRouter);

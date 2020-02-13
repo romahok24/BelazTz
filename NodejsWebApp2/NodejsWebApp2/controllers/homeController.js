@@ -1,3 +1,3 @@
 exports.main = function (request, response) {
-    response.render("main.hbs");
+    response.sendFile(__dirname.replace("controllers", "") + "views/main.html");
 };

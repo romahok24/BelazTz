@@ -55,10 +55,10 @@
     <Content Include="server.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Content Include="views\create.hbs">
+    <Content Include="views\create.html">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="views\main.hbs">
+    <Content Include="views\main.html">
       <SubType>Code</SubType>
     </Content>
     <Content Include="models\statusCodes.js">

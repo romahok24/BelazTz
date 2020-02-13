@@ -16,7 +16,7 @@ function login() {
             showMessage(recieved);
         }
         else {
-            window.location.replace("http://localhost:1337/main");
+            window.location.replace("/main");
         }
     });
 
