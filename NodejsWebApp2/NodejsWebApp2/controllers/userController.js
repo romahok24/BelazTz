@@ -2,10 +2,20 @@ const User = require("../models/user.js");
 const statusCodes = require("../models/statusCodes.js");
 const validator = require("../models/validator.js");
 
+/**
+ * GET-функция страницы enter.
+ * @param {any} request
+ * @param {any} response
+ */
 exports.enter = function (request, response) {
     response.sendFile(__dirname.replace("controllers", "") + "views/enter.html");
 };
 
+/**
+ * POST-функция логина.
+ * @param {any} request
+ * @param {any} response
+ */
 exports.login = function (request, response) {
     let email = request.body.email;
     let password = request.body.password;
@@ -31,6 +41,11 @@ exports.login = function (request, response) {
     });
 };
 
+/**
+ * POST-функция регистрации.
+ * @param {any} request
+ * @param {any} response
+ */
 exports.register = function (request, response) {
     const email = request.body.email;
     const emailRepeat = request.body.emailRepeat;
@@ -55,6 +70,11 @@ exports.register = function (request, response) {
     });  
 };
 
+/**
+ * POST-функция востановления пароля.
+ * @param {any} request
+ * @param {any} response
+ */
 exports.forgot = function (request, response) {
     const email = request.body.email;
 
@@ -76,15 +96,28 @@ exports.forgot = function (request, response) {
     });
 }
 
+/**
+ * POST-функция изменения языка.
+ * @param {any} request
+ * @param {any} response
+ */
 exports.changeLanguage = function (request, response) {
     statusCodes.changeLanguage(request.body.language);
     response.json(getPageText());
 }
 
+/**
+ * POST-функция получения списка используемых слов в формах блока.
+ * @param {any} request
+ * @param {any} response
+ */
 exports.getPageText = function (request, response) {
     response.json(getPageText());
 }
 
+/**
+ * Получение объекта статус_код : сообщение.
+ */
 function getPageText() {
     var ans = {};
     for (var i = 1; i < 10; i++)

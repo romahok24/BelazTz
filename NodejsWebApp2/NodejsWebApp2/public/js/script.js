@@ -73,6 +73,47 @@ function forgot() {
     request.send(user);
 }
 
+function changeLanguage(obj) {
+    let request = new XMLHttpRequest();
+
+    let lang = JSON.stringify(obj);
+    console.log(obj);
+    request.open("POST", "/users/changeLanguage", true);
+    request.setRequestHeader("Content-Type", "application/json");
+    request.addEventListener("load", function () {
+        console.log(request.response);
+        let recieved = JSON.parse(request.response);
+
+        for (var key in recieved) {
+            let elements = document.getElementsByClassName(key);
+
+            for (let i = 0; i < elements.length; i++)
+                elements[i].innerText = recieved[key];
+        }
+    });
+
+    request.send(lang);
+}
+
+function showPageText() {
+    let request = new XMLHttpRequest();
+
+    request.open("POST", "/users/getPageText", true);
+    request.setRequestHeader("Content-Type", "application/json");
+    request.addEventListener("load", function () {
+        let recieved = JSON.parse(request.response);
+
+        for (var key in recieved) {
+            let elements = document.getElementsByClassName(key);
+
+            for (let i = 0; i < elements.length; i++)
+                elements[i].innerText = recieved[key];
+        }
+    });
+
+    request.send();
+}
+
 function getErrorDiscription(error) {
     for (var key in error) {
         return error[key];
@@ -102,25 +143,6 @@ function showMessage(recieved) {
     document.getElementById("info").innerText = getErrorDiscription(recieved.message);
 }
 
-function showPageText() {
-    let request = new XMLHttpRequest();
-
-    request.open("POST", "/users/getPageText", true);
-    request.setRequestHeader("Content-Type", "application/json");
-    request.addEventListener("load", function () {
-        let recieved = JSON.parse(request.response);
-
-        for (var key in recieved) {
-            let elements = document.getElementsByClassName(key);
-
-            for (let i = 0; i < elements.length; i++) 
-                elements[i].innerText = recieved[key];
-        }
-    });
-
-    request.send();
-}
-
 function changeToRus() {
     changeLanguage({ language: "ru" });
     document.getElementsByClassName("back")[0].style.width = "240px";
@@ -129,28 +151,6 @@ function changeToRus() {
 function changeToEng() {
     changeLanguage({ language: "en" });
     document.getElementsByClassName("back")[0].style.width = "225px";
-}
-
-function changeLanguage(obj) {
-    let request = new XMLHttpRequest();
-
-    let lang = JSON.stringify(obj);
-    console.log(obj);
-    request.open("POST", "/users/changeLanguage", true);
-    request.setRequestHeader("Content-Type", "application/json");
-    request.addEventListener("load", function () {
-        console.log(request.response);
-        let recieved = JSON.parse(request.response);
-
-        for (var key in recieved) {
-            let elements = document.getElementsByClassName(key);
-
-            for (let i = 0; i < elements.length; i++)
-                elements[i].innerText = recieved[key];
-        }
-    });
-
-    request.send(lang);
 }
 
 $(document).ready(function () {

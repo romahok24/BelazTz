@@ -29,6 +29,10 @@ const statusCodes = {
 module.exports.codes = statusCodes;
 module.exports.language = language;
 
+/**
+ * Получение ответа от сервера по коду.
+ * @param {String} code Код ответа.
+ */
 module.exports.getAnswerObjectByCode = function (code) {
     let ans = {};
 
@@ -38,6 +42,11 @@ module.exports.getAnswerObjectByCode = function (code) {
     return { "status": status, "message": ans };  
 }
 
+/**
+ * Получение ответа от сервера по коду(Используется для кода m013, где строка динамически изменяется взависимости от пароля).
+ * @param {String} code Код ответа.
+ * @param {String} password Пароль.
+ */
 module.exports.getMessageByCodeAndPswd = function (code, password){
     let ans = {};
     ans[code] = (language === "ru" ? "Ошибка " : "Error ") + password;
@@ -45,10 +54,18 @@ module.exports.getMessageByCodeAndPswd = function (code, password){
     return { "status": false, "message": ans };
 }
 
+/**
+ * Изменение языка.
+ * @param {String} lang Язык.
+ */
 module.exports.changeLanguage = function (lang) {
     language = lang;;
 }
 
+/**
+ * Получение строки сообщения по коду ошибки.
+ * @param {String} code Код ошибки.
+ */
 module.exports.getMessageStringByCode = function (code) {
     return statusCodes[code][language];
 }
