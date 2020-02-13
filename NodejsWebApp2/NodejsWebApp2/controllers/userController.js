@@ -3,7 +3,7 @@ const statusCodes = require("../models/statusCodes.js");
 const validator = require("../models/validator.js");
 
 exports.enter = function (request, response) {
-    response.sendFile(__dirname.replace("controllers", "") + "views/create.html");
+    response.sendFile(__dirname.replace("controllers", "") + "views/enter.html");
 };
 
 exports.login = function (request, response) {
