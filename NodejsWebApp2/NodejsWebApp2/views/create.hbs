@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма для авторизации</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+</head>
+<body>
+    <div class="dws-wrapper">
+        <div class="dws-form">
+            <label class="tab active m021"></label>
+            <label class="tab m025"></label>
+
+            <div class="back">
+                <div id="info"></div>
+            </div>
+
+            <div>
+                <a href="javascript: changeToRus();">Русский</a> |
+                <a href="javascript: changeToEng();">English</a>
+            </div>
+
+            <form name="loginForm" id="form-1" class="tab-form active" action="login" method="POST">
+                <div class="box-input">
+                    <input name="name" class="input" type="text" required>
+                    <label class="m022"></label>
+                </div>
+
+                <div class="box-input">
+                    <input name="password" class="input" type="password" required>
+                    <label class="m023"></label>
+                </div>
+
+                <a href="javascript: login();" class="button m029"></a>
+                <a id="forgotButton" class="m026"></a>
+            </form>
+
+            <form name="registrForm" id="form-2" class="tab-form" action="register" method="POST">
+                <div class="box-input">
+                    <input name="name" class="input" type="text" required>
+                    <label class="m022"></label>
+                </div>
+
+                <div class="box-input">
+                    <input name="nameRepeat" class="input" type="text" required>
+                    <label class="m027"></label>
+                </div>
+
+                <div class="box-input">
+                    <input name="password" class="input" type="password" required>
+                    <label class="m023"></label>
+                </div>
+
+                <div class="box-input">
+                    <input name="passwordRepeat" class="input" type="password" required>
+                    <label class="m028"></label>
+                </div>
+                <a href="javascript: register();" class="button m029"></a>
+            </form>
+
+            <form name="forgotForm" id="form-3" class="tab-form" action="forgot" method="POST">
+                <div class="box-input">
+                    <input name="name" class="input" type="text" required>
+                    <label class="m022"></label>
+                </div>
+                <a href="javascript: forgot();" class="button m029"></a>
+            </form>
+            <br />
+        </div>
+    </div>
+</body>
+</html>

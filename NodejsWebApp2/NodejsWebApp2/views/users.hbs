@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Список пользователей</title>
+</head>
+<body>
+    <a href="/users/create">Добавить пользователя</a>
+    <h1>Список пользователей</h1>
+    <table>
+        <tr><th>Имя</th><th>Возраст</th></tr>
+        {{#each users}}
+        <tr><td>{{this.name}}</td><td>{{this.password}}</td></tr>
+        {{/each}}
+    </table>
+</body>
+</html>
