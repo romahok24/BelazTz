@@ -1,2 +1,4 @@
 C:\Users\Romandi\source\repos\NodejsWebApp2\NodejsWebApp2\obj\Debug\NodejsWebApp2.njsprojAssemblyReference.cache
 C:\Users\Romandi\source\repos\NodejsWebApp2\NodejsWebApp2\bin\Microsoft.NodejsTools.WebRole.dll
+c:\BelazTz\NodejsWebApp2\NodejsWebApp2\obj\Debug\NodejsWebApp2.njsprojAssemblyReference.cache
+c:\BelazTz\NodejsWebApp2\NodejsWebApp2\bin\Microsoft.NodejsTools.WebRole.dll

@@ -58,19 +58,10 @@
     <Content Include="views\create.hbs">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="wwwroot\css\style.css">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="views\main.hbs">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="wwwroot\scripts\script.js">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="models\statusCodes.js">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="views\users.hbs">
       <SubType>Code</SubType>
     </Content>
   </ItemGroup>
@@ -80,11 +71,8 @@
     <Folder Include="public\" />
     <Folder Include="public\css\" />
     <Folder Include="public\js\" />
-    <Folder Include="wwwroot\" />
     <Folder Include="views\" />
     <Folder Include="routes\" />
-    <Folder Include="wwwroot\css\" />
-    <Folder Include="wwwroot\scripts\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>
